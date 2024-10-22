@@ -8,7 +8,7 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
  * `nasa-dashboard`
- * 
+ *
  * @demo index.html
  * @element nasa-dashboard
  */
