@@ -1,7 +1,6 @@
 import { LitElement, html, css } from "lit";
 
 export class NasaImage extends LitElement {
-
   constructor() {
     super();
     this.title = '';
@@ -12,63 +11,68 @@ export class NasaImage extends LitElement {
 
   static get properties() {
     return {
-        source: { type: String },
-        title: { type: String },
-        alt: { type : String },
-        desc: { type : String }
+      source: { type: String },
+      title: { type: String },
+      alt: { type: String },
+      desc: { type: String }
     };
   }
 
   static get styles() {
     return [css`
-
-      div {
-        width: 240px;
-        height: 300px;
-        font-size: 16px;
-        font-weight: bold;
-        border: black;
+      .card {
+        display: inline-grid;
+        width: var(--ddd-card-width, 240px);
+        height: var(--ddd-card-height, 300px);
+        font-size: var(--ddd-font-size-md);
+        font-weight: var(--ddd-font-weight-bold);
+        border: var(--ddd-border-sm) solid var(--ddd-border-color);
+        border-radius: var(--ddd-radius-md);
+        transition: background-color 0.2s ease;
       }
-      div:hover {
+      .card:hover {
         background-color: var(--ddd-theme-default-keystoneYellow);
       }
 
-      .card {
-        display: inline-grid;
-      }
-
       .title {
+        padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
         height: var(--ddd-spacing-10);
         text-align: center;
+        color: var(--ddd-primary-color);
       }
 
       .desc {
+        padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
         height: var(--ddd-spacing-20);
         text-align: center;
+        color: var(--ddd-secondary-color);
       }
 
       img {
-        width: 240px;
-        height: 180px;
+        width: 100%;
+        height: var(--ddd-image-height, 180px);
         display: block;
+        border-top-left-radius: var(--ddd-radius-md);
+        border-top-right-radius: var(--ddd-radius-md);
       }
 
       a {
         text-decoration: none;
+        color: inherit;
       }
-
     `];
   }
 
   render() {
     return html`
-    <div class="card">
-        <img src="${this.source}" alt="${this.alt}"/>
+      <div class="card">
+        <img src="${this.source}" alt="${this.alt}" />
         <div class="title">${this.title}</div>
         <div class="desc">${this.desc}</div>
-    </div>
+      </div>
     `;
   }
+
   static get tag() {
     return "nasa-image";
   }

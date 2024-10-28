@@ -1,9 +1,5 @@
 /**
- * all main stuff has been added, need to add functions and such
- */
-
-/**
- * Copyright 2024 nrousseau4
+ * Copyright 2024 spfrha
  * @license Apache-2.0, see LICENSE for full text.
  */
 import { LitElement, html, css } from "lit";
